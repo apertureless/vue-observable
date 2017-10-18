@@ -7,7 +7,6 @@
   "module": "dist/vue-observable.esm.js",
   "browser": "dist/vue-observable.js",
   "unpkg": "dist/vue-observable.js",
-  "style": "dist/vue-observable.css",
   "files": [
     "dist",
     "src"

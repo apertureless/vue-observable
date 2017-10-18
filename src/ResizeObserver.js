@@ -11,7 +11,7 @@ export default {
   },
   created () {
     if ('ResizeObserver' in window) {
-      this.$data._observer = new ResizeObserver((entries) => {
+      this.$data._observer = new ResizeObserver((entries) => { // eslint-disable-line no-undef
         console.log([entries[0]])
         this.$emit('resize', [entries[0]])
       })

@@ -64,7 +64,7 @@ export default {
   },
   created () {
     if ('MutationObserver' in window) {
-      this.$data._observer = new MutationObserver((mutations) => {
+      this.$data._observer = new MutationObserver((mutations) => { // eslint-disable-line no-undef
         mutations.forEach((mutation) => {
           this.$emit('mutation', [mutation])
         })

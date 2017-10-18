@@ -45,7 +45,7 @@ export default {
   },
   created () {
     if ('IntersectionObserver' in window) {
-      this.$data._observer = new IntersectionObserver((entries) => {
+      this.$data._observer = new IntersectionObserver((entries) => { // eslint-disable-line no-undef
         if (!entries[0].isIntersecting) {
           this.$emit('leave', [entries[0]])
         } else {
