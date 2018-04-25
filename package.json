@@ -1,6 +1,6 @@
 {
   "name": "vue-observable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue Components for the IntersectionObserver, MutationObserver and ResizeObserver APIs",
   "author": "Jakub Juszczak <jakub@posteo.de>",
   "main": "dist/vue-observable.common.js",
