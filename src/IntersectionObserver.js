@@ -9,7 +9,6 @@ export default {
      * @url: https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root
      */
     root: {
-      type: Object || Array,
       default: () => null
     },
     /**
