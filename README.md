@@ -16,9 +16,10 @@ npm install --save vue-observable
 
 ### Componentlist
 
-- [`<intersect>`]()
-- [`<mutate>`]()
-- [`<resize>`]()
+- [`<intersect>`](/src/IntersectionnObserver.js)
+- [`<mutation>`](/src/MutationObserver.js)
+- [`<resize>`](/src/ResizeObserver.js)
+
 ### Bundler (Webpack, Rollup)
 
 ```js
@@ -31,10 +32,10 @@ Vue.use(VueObservable)
 or
 
 ```js
-import {intersect, mutate} from 'vue-observable'
+import {Intersect, Mutation, Resize} from 'vue-observable'
 
 export default {
-  components: {intersect, mutate}
+  components: {Intersect, Mutation, Resize}
 }
 ```
 
@@ -51,19 +52,19 @@ export default {
 
 ## 📒 Components
 
-### IntersectionObserver
+### IntersectionObserver - [`<intersect>`](/src/IntersectionnObserver.js)
+
 The `<intersect>` component will detect if a given element is in the viewport. And emit an event.
 
 #### Props
 
-| Prop | Required | Url | Default |
-| --- | --- | --- | --- |
-| root | no | [url](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root) | null
-| rootMargin | no | [url](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) | `0px 0px 0px 0px`|
-| threshold | no | [url](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds) | `[0, 0.2]`|
+| Prop | Required | Default |
+| --- | --- | --- |
+| [root](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root) | no | null
+| [rootMargin](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) | no | `0px 0px 0px 0px`|
+| [threshold](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds) | no | `[0, 0.2]`|
 
 #### Events
-The `<intersect></intersect>` component emits following events:
 
 - `enter`
 - `leave`
@@ -72,21 +73,55 @@ The `<intersect></intersect>` component emits following events:
 #### Usage
 
 ```html
-<intersect @enter="someMethod()" @leave="someMethod()" @change="someMethod()">
+<intersect @enter="enterMethod" @leave="leaveMethod" @change="changeMethod">
   <some-component-or-node>
 </intersect>
 ```
-### MutationObserver
+
+### MutationObserver - [`<Mutation>`](/src/MutationObserver.js)
 
 #### Props
+
+| Prop | Required | Default |
+| --- | --- | --- |
+| [attributeFilter](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter) | no | null
+| [attributeOldValue](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeOldValue) | no | null
+| [attributes](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributes) | no | false
+| [characterData](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/characterData) | no |null
+| [characterDataOldValue](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/characterDataOldValue) | no |null
+| [childList](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/childList) | no |false
+| [subtree](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/subtree) | no |false
+
 #### Events
+
+- `mutation`
+
 #### Usage
 
-### ResizeObserver
+```html
+<mutation @mutation="mutationMethod">
+  <some-component-or-node>
+</mutation>
+```
+
+### ResizeObserver - [`<resize>`](/src/ResizeObserver.js)
 
 #### Props
+
+N/A
+
 #### Events
+
+- `resize`
+
 #### Usage
+
+```html
+<resize @resize="resizeMethod">
+  <some-component-or-node>
+</resize>
+```
+
 ## Development
 
 ### Launch visual tests
