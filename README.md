@@ -16,9 +16,9 @@ npm install --save vue-observable
 
 ### Componentlist
 
-- [`<intersect>`](/src/IntersectionnObserver.js)
-- [`<mutation>`](/src/MutationObserver.js)
-- [`<resize>`](/src/ResizeObserver.js)
+- [`<intersect>`](./src/IntersectionObserver.js)
+- [`<mutation>`](./src/MutationObserver.js)
+- [`<resize>`](./src/ResizeObserver.js)
 
 ### Bundler (Webpack, Rollup)
 
